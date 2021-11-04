@@ -17,6 +17,7 @@ matplotlib = "*"
 seaborn = "*"
 scikit-image = "*"
 tensorflow-gpu = "*"
+tensorflow-addons = "*"
 
 [requires]
 python_version = "3.8"
