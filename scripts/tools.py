@@ -11,6 +11,10 @@ import pandas as pd
 import sklearn.model_selection
 
 
+def compute_f1(precision, recall):
+    return 2 * (precision * recall) / (precision + recall)
+
+
 def load_nih_dataset(path_to_data='/data/'):
     """
         Load the NIH data to a pandas dataframe
@@ -41,7 +45,7 @@ def split_findings(df_src):
     return d, all_labels
 
 
-def create_splits(complete_df, validation_size=0.4, train_positive_ratio=0.5, validation_positive_ratio=0.25):
+def split_train_validation(complete_df, validation_size=0.4, train_positive_ratio=0.5, validation_positive_ratio=0.25):
     """
     split your original dataframe into two sets that can be used for training and testing your model
     The proportion of positive labels must be balanced between each dataset.
