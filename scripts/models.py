@@ -35,5 +35,5 @@ class ResNet50:
         return base_model
 
     def get_fine_tuning_top_layer(self):
-        """ Fine tune last two convolution blocks """
-        return 60
+        """ Fine tune last convolution blocks """
+        return 30
