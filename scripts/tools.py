@@ -11,8 +11,18 @@ import pandas as pd
 import sklearn.model_selection
 
 
+def remove_nan(array):
+    return array[~np.isnan(array)]
+
+
 def compute_f1(precision, recall):
     return 2 * (precision * recall) / (precision + recall)
+
+
+def find_nearest_idx(array, value):
+    array = np.asarray(array)
+    index = (np.abs(array - value)).argmin()
+    return index
 
 
 def load_nih_dataset(path_to_data='/data/'):
