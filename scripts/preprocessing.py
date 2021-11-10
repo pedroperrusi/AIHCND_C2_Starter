@@ -13,8 +13,8 @@ def normalize_image(image):
     return (image - np.mean(image)) / np.std(image)
 
 
-def min_max_scaling(image):
-    scaler = sklearn.preprocessing.MinMaxScaler(feature_range=(-1, 1))
+def min_max_scaling(image, feature_range=(-1, 1)):
+    scaler = sklearn.preprocessing.MinMaxScaler(feature_range=feature_range)
     scaler.fit(image)
     return scaler.transform(image)
 
